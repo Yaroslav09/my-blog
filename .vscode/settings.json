@@ -1,0 +1,12 @@
+{
+  "emmet.includeLanguages": {
+    "html.erb": "html",
+    "erb": "html",
+    "ruby": "html"
+  },
+  "emmet.preferences": {
+  
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
+}

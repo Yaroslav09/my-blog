@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="home-item">    
+      <a class="home-link" href="<%=  posts_path %>">Home</a>
+    </div>
+    <div class="posts">
+      <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
+      <%=  link_to 'Create new post', new_post_path, class: "all-post" %>
+    </div>
+    <div class="auth">
+      <ul class="auth-items">
+        <% if user_signed_in? %>
+          <li class="auth-item">
+            <%= link_to 'Edit your accaunt', edit_user_registration_path, class: "auth-link"%>          
+          </li>
+          <li class="auth-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete,  class: "auth-link"%>
+          </li>
+        <% else %>
+          <li class="auth-item">
+            <%= link_to 'Register', new_user_registration_path, class: "auth-link"%>          
+          </li>
+          <li class="auth-item">
+            <%= link_to 'Sign in', new_user_session_path, class: "auth-link"%>          
+          </li>     
+        <% end %> 
+      </ul>
+    </div>
+  </div>
+</nav>
