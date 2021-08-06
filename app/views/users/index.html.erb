@@ -1,0 +1,10 @@
+<h1>My blog posts</h1>
+
+
+<% @users.each do |user| %>
+  <% user.posts.each do |post| %>
+    <%= post.title %>
+    <%= post.body %>
+  <% end %>
+<% end %>
+

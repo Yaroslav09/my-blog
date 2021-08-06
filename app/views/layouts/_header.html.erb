@@ -4,8 +4,12 @@
       <a class="home-link" href="<%=  posts_path %>">Home</a>
     </div>
     <div class="posts">
-      <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
-      <%=  link_to 'Create new post', new_post_path, class: "all-post" %>
+      <% if user_signed_in? %>
+        <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
+        <%=  link_to 'Create new post', new_post_path, class: "all-post" %>
+      <% else %>
+        <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
+      <% end %>
     </div>
     <div class="auth">
       <ul class="auth-items">
