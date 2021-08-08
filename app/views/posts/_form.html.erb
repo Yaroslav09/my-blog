@@ -10,21 +10,21 @@
 <% end %>
 
 <%= form_for @post do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>  
-  <div class="form-group">
-    <%= f.label :summary %>
-    <%= f.text_area :summary %>
+  <div class="form-group mb-3">
+    <%= f.label :summary, class: "form-label" %>
+    <%= f.text_area :summary, class: "form-control" %>
   </div> 
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <div class="form-group mb-3">
+    <%= f.label :body, class: "form-label" %>
+    <%= f.text_area :body, class: "form-control" %>
   </div> 
   <div class="button-group">
-    <%= f.submit 'Save post', class: 'form-button-back' %>    
-    <%= link_to 'Back', :back, class: 'form-button-back' %>
+    <%= f.submit 'Save post', class: 'btn btn-primary form-button-back' %>    
+    <%= link_to 'Back', :back, class: 'btn btn-secondary form-button-back' %>
   </div> 
 
 <% end %>

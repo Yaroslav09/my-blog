@@ -1,23 +1,21 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
   end
 
-  def show    
-  end
+  def show; end
 
   def new
-    @post = Post.new
-    #@post = current_user.posts.build   
+    @post = Post.new    
   end
 
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    #@post = current_user.posts.new(post_params)    
+    
     if @post.save
       redirect_to @post
     else
@@ -25,8 +23,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit    
-  end
+  def edit; end
 
   def update    
     if @post.update(post_params)
@@ -36,8 +33,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy        
     @post.destroy
+    
     redirect_to posts_path
   end 
 

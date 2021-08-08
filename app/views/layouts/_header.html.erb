@@ -1,31 +1,31 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
     <div class="home-item">    
-      <a class="home-link" href="<%=  posts_path %>">Home</a>
+      <a class="btn btn-primary home-link" href="<%=  posts_path %>">Home</a>
     </div>
     <div class="posts">
       <% if user_signed_in? %>
-        <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
-        <%=  link_to 'Create new post', new_post_path, class: "all-post" %>
+        <%=  link_to 'Show all posts', posts_path, class: "btn btn-info all-post" %>
+        <%=  link_to 'Create new post', new_post_path, class: "btn btn-warning all-post" %>
       <% else %>
-        <%=  link_to 'Show all posts', posts_path, class: "all-post" %>
+        <%=  link_to 'Show all posts', posts_path, class: "btn btn-info all-post" %>
       <% end %>
     </div>
     <div class="auth">
-      <ul class="auth-items">
+      <ul class="btn-group auth-items">
         <% if user_signed_in? %>
           <li class="auth-item">
-            <%= link_to 'Edit your accaunt', edit_user_registration_path, class: "auth-link"%>          
+            <%= link_to 'Edit your accaunt', edit_user_registration_path, class: "btn btn-warning auth-link"%>          
           </li>
           <li class="auth-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete,  class: "auth-link"%>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete,  class: "btn btn-outline-danger auth-link"%>
           </li>
         <% else %>
           <li class="auth-item">
-            <%= link_to 'Register', new_user_registration_path, class: "auth-link"%>          
+            <%= link_to 'Register', new_user_registration_path, class: "btn btn-success auth-link"%>          
           </li>
           <li class="auth-item">
-            <%= link_to 'Sign in', new_user_session_path, class: "auth-link"%>          
+            <%= link_to 'Sign in', new_user_session_path, class: "btn btn-info auth-link"%>          
           </li>     
         <% end %> 
       </ul>

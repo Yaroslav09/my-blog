@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  
   def index
-    @users = User.includes(:posts)
-  end
+    @users = User.all      
+    @user = current_user.id    
+  end  
+
 end

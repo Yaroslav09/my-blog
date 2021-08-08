@@ -1,10 +1,14 @@
 <h1>My blog posts</h1>
 
-
 <% @users.each do |user| %>
   <% user.posts.each do |post| %>
     <%= post.title %>
-    <%= post.body %>
+    <p><%= post.body %></p>
+    <p>Author: <b><%= post.user.email %></b></p> 
+   
+    <hr>
   <% end %>
 <% end %>
+
+
 

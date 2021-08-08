@@ -1,9 +1,10 @@
-<h1>My blog posts</h1>
+<h1 class="alert alert-primary">My blog posts</h1>
 
 <% @posts.each do |post| %>
-  <h2><%= link_to post.title, post_path(post) %></h2>  
+  <h2><%= link_to post.title, post_path(post), class: "link-success" %></h2>  
   <p><%= post.summary %><p>  
   <p>Author: <b><%= post.user.email %></b><p>  
+  <hr>
 
 <% end %>
 
