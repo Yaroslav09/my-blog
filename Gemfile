@@ -17,8 +17,9 @@ gem 'simple_form'
 gem 'bootstrap', '~> 5.0.1'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
+gem 'kaminari'
 
-
+#gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

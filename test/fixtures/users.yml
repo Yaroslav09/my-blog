@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  about                  :text
+#  admin                  :boolean          default(FALSE)
 #  birthday               :date
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null

@@ -4,7 +4,9 @@
 <p>Email: <%= @user.email%></p>
 <p>About user: <%= @user.about %></p>
 
-<% @user_posts.each do |post| %>
+<% @user_posts.each do |post| %> 
   <h2><%= link_to post.title, post_path(post) %></h2>
+  <%= image_tag post.image.url(:large), class: "img-fluid" if post.image? %>
   <p><%= post.body %></p>
+  <hr>
 <% end %>

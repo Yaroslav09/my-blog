@@ -18,9 +18,13 @@
 class Post < ApplicationRecord  
   mount_uploader :image, ImageUploader  
 
+  default_scope -> { order(created_at: :desc) }
+
   validates :title, presence: true
   validates :summary, presence: true
   validates :body, presence: true
+
+  paginates_per 5
   
   has_rich_text :body
   belongs_to :user
