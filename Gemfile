@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap', '~> 5.0.1'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
+
 
 
 group :development, :test do  

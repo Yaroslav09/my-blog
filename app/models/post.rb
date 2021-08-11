@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  body       :text
+#  image      :string
 #  summary    :text
 #  title      :string
 #  created_at :datetime         not null
@@ -15,7 +16,12 @@
 #  index_posts_on_user_id_and_created_at  (user_id,created_at)
 #
 class Post < ApplicationRecord  
-  belongs_to :user
+  mount_uploader :image, ImageUploader  
 
-  validates :title, :summary, :body, presence: true
+  validates :title, presence: true
+  validates :summary, presence: true
+  validates :body, presence: true
+  
+  has_rich_text :body
+  belongs_to :user
 end

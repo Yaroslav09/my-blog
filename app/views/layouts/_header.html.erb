@@ -15,6 +15,9 @@
       <ul class="btn-group auth-items">
         <% if user_signed_in? %>
           <li class="auth-item">
+            <%= link_to 'All users', users_path, class: "btn btn-warning auth-link"%>          
+          </li>
+          <li class="auth-item">
             <%= link_to 'Edit your accaunt', edit_user_registration_path, class: "btn btn-warning auth-link"%>          
           </li>
           <li class="auth-item">

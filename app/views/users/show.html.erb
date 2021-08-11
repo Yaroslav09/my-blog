@@ -1,0 +1,10 @@
+<h2>Full name: <%= @user.first_name %> <%= @user.last_name %></h2>
+<h3>Username: <%= @user.user_name %></h3>
+<h3>Birthday: <%= @user.birthday %></h3>
+<p>Email: <%= @user.email%></p>
+<p>About user: <%= @user.about %></p>
+
+<% @user_posts.each do |post| %>
+  <h2><%= link_to post.title, post_path(post) %></h2>
+  <p><%= post.body %></p>
+<% end %>

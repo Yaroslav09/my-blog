@@ -1,7 +1,8 @@
 <h1 class="alert alert-primary">My blog posts</h1>
 
-<% @posts.each do |post| %>
+<% @posts.each do |post| %> 
   <h2><%= link_to post.title, post_path(post), class: "link-success" %></h2>  
+   <%= image_tag post.image.url(:thumb), class: "img-fluid" if post.image? %>
   <p><%= post.summary %><p>  
   <p>Author: <b><%= post.user.email %></b><p>  
   <hr>

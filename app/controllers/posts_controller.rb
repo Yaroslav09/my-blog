@@ -10,11 +10,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new    
+    # @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
+    @post = current_user.posts.build(post_params)    
     
     if @post.save
       redirect_to @post
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :summary, :body)
+    params.require(:post).permit(:title, :summary, :body, :image)
   end
 
 end
