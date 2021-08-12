@@ -20,7 +20,6 @@ gem "mini_magick"
 gem 'kaminari'
 gem 'rexml', '~> 3.2', '>= 3.2.5'
 
-#gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -44,4 +43,7 @@ group :test do
   gem 'faker', '~> 2.18'
 end
 
+group :production do
+  gem 'pg'
+end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
