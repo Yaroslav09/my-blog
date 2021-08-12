@@ -1,0 +1,34 @@
+<% if @post.errors.any? %>
+  <div>
+    <h5><%= t('common.errors') %></h5>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @post], html:  {multipart: true } do |f| %>
+  <div class="form-group mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>  
+  <div class="form-group mb-3">
+    <%= f.label :summary, class: "form-label" %>
+    <%= f.text_area :summary, class: "form-control" %>
+  </div> 
+  <div class="form-group mb-3">
+    <%= f.label :body, class: "form-label" %>
+    <%= f.rich_text_area :body, class: "form-control" %>
+  </div> 
+  <div class="form-group mb-3">    
+    <%= f.file_field :image %>
+  </div> 
+  <div class="button-group">
+    <%= f.submit 'Save post', class: 'btn btn-primary form-button-back' %>    
+    <%= link_to 'Back', :back, class: 'btn btn-secondary form-button-back' %>
+  </div> 
+
+<% end %>
+

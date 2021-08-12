@@ -1,11 +1,18 @@
 <h1 class="alert alert-primary">My blog posts</h1>
 
-<% @posts.each do |post| %>
-  <h2><%= link_to post.title, post_path(post), class: "link-success" %></h2>  
-  <p><%= post.summary %><p>  
-  <p>Author: <b><%= post.user.email %></b><p>  
-  <hr>
+<%= paginate @posts, outer_window: 3 %>
 
+<% @posts.each do |post| %> 
+  <h2><%= link_to post.title, post_path(post), class: "link-success" %></h2>  
+  <div class="previos">
+    <%= image_tag post.image.url(:thumb), class: "img-fluid" if post.image? %>
+    <p><%= post.summary %><p>   
+  </div>   
+  <p>Author: <b><%= link_to post.user.user_name, user_path(post.user.id) %></b><p>  
+  <hr>
 <% end %>
+ 
+<%= paginate @posts, outer_window: 3 %>
+
 
 
