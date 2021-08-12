@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: :show
 
   def index
-    @posts = Post.page params[:page]
-    @posts.order("created_at DESC")
+    @posts = Post.page params[:page]    
   end
 
   def show; end  

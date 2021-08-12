@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'kaminari'
+gem 'rexml', '~> 3.2', '>= 3.2.5'
 
 #gem 'will_paginate', '~> 3.1.0'
 
@@ -39,6 +40,8 @@ group :test do
   gem 'selenium-webdriver'  
   gem 'webdrivers'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'factory_bot_rails'
+  gem 'faker', '~> 2.18'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
