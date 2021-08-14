@@ -5,12 +5,15 @@
   <h2 class="text-center fw-bold fs-2 text-uppercase text-white bg-info py-2"><%= @user.user_name %> accaunt</h2>
 <% end %>
 
-<h2>Full name: <%= @user.first_name %> <%= @user.last_name %></h2>
-<h3>Username: <%= @user.user_name %></h3>
-<h3>Birthday: <%= @user.birthday %></h3>
-<p>Email: <%= @user.email%></p>
-<p>About user: <%= @user.about %></p>
-
+<% if user_signed_in? && current_user.id == @user.id %>
+  <h2>Full name: <%= @user.first_name %> <%= @user.last_name %></h2>
+  <h3>Username: <%= @user.user_name %></h3>
+  <h3>Birthday: <%= @user.birthday %></h3>
+  <p>Email: <%= @user.email%></p>
+  <p>About user: <%= @user.about %></p>
+<% else %>
+  <h3>Username: <%= @user.user_name %></h3>
+<% end %>
 
 <% if user_signed_in? && current_user.id == @user.id %>
   <h2 class="text-center fw-bold fs-2 text-uppercase text-white bg-success py-2">Your posts</h2>
