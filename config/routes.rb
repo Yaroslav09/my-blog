@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show]
   resources :users, only: [:index, :show]
   
-  namespace :admin do
+  namespace :profile do
     resources :posts, except: [:index, :show]    
   end
 

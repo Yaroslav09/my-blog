@@ -6,7 +6,7 @@
     <div class="posts">
       <% if user_signed_in? %>
         <%=  link_to 'Show all posts', posts_path, class: "btn btn-info all-post" %>
-        <%=  link_to 'Create new post', new_admin_post_path, class: "btn btn-warning all-post" %>
+        <%=  link_to 'Create new post', new_profile_post_path, class: "btn btn-warning all-post" %>
       <% else %>
         <%=  link_to 'Show all posts', posts_path, class: "btn btn-info all-post" %>
       <% end %>
